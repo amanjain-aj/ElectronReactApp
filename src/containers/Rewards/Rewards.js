@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import peopleimage from "../../assets/images/people.svg";
 import '../../styles/Dashboard.css';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-import { DashboardCard, ProcessbarTd } from '../../components';
+import { DashboardCard,  Dropdown,  ProcessbarTd } from '../../components';
 import 'rsuite/dist/rsuite.min.css';
+import Modal from "../Modal/Modal"
 import Chip from '@mui/material/Chip';
 import Shape from '../../assets/images/shape.svg';
 import Avatar from '@mui/material/Avatar';
@@ -13,6 +14,9 @@ import Uber from "../../assets/images/uber.jpg";
 import Paytm from "../../assets/images/paytm.jpg";
 import Zomato from "../../assets/images/zomato.png";
 import NotificationCard from '../../components/common/NotificationCard';
+import 'react-dropdown/style.css';
+import Multiselect from 'multiselect-react-dropdown';
+
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -139,32 +143,6 @@ const Dashboard = () => {
     // ChartJS.defaults.global.elements.line.tension = 0.2;
 
 
-    const Cards = [{
-        key: 1,
-        cardTitle: 'Amazon Gift Card',
-        cardImage: Amazon
-    },
-    {
-        key: 2,
-        cardTitle: 'BookMyShow',
-        cardImage: BookMyShow
-    },
-    {
-        key: 3,
-        cardTitle: 'Uber',
-        cardImage: Uber
-    },
-    {
-        key: 4,
-        cardTitle: 'Zomato',
-        cardImage: Zomato
-        },
-     {
-        key: 5,
-        cardTitle: 'Paytm',
-        cardImage: Paytm
-    },
-    ]
 
     const ProcessData = [{
         label: 'Illinois',
@@ -293,12 +271,104 @@ const Dashboard = () => {
         Charts = strings['Dashboard.Charts'],
         Notifications = strings['Dashboard.Notifications']
 
+        const [modal,setModal] = useState(false)
+        const options = [{value:"Paresh",label:"paresh"},{value:"Aman",label:"aman"}]
+
+        const options1 = [{
+            value:"Amazon",
+            label:'amazon'
+        },
+        {
+            value:"Paytm",
+            label:'Paytm'
+        },{
+            value:"zomato",
+            label:'zomato'
+        },{
+            value:"uber",
+            label:'uber'
+        },{
+            value:"bookmyshow",
+            label:'bookmyshow'
+        },
+    ];
+    const acheiverOptions = [
+        {
+            value:"uyewhbwyifew",
+            label:'Best Employee Of the Year'
+        },
+        {
+            value:"uyewhbwyifew",
+            label:'Best Personality Of the Year'
+        },
+        {
+            value:"uyewhbwyifew",
+            label:'All Rounder Of the Year'
+        },
+    ];
+    const options2 = [
+        {
+            value:"uyewhbwyifew",
+            label:'50% Off'
+        },
+        {
+            value:"uyewhbwyifew",
+            label:'60% Off'
+        },
+        {
+            value:"uyewhbwyifew",
+            label:'10% Off'
+        },
+    ];
+
+        const Cards = [{
+            key: 1,
+            cardTitle: 'Amazon Gift Card',
+            cardImage: Amazon
+        },
+        {
+            key: 2,
+            cardTitle: 'BookMyShow',
+            cardImage: BookMyShow
+        },
+        {
+            key: 3,
+            cardTitle: 'Uber',
+            cardImage: Uber
+        },
+        {
+            key: 4,
+            cardTitle: 'Zomato',
+            cardImage: Zomato
+            },
+        {
+            key: 5,
+            cardTitle: 'Paytm',
+            cardImage: Paytm
+        },
+        ]
+
     return (
         <>
             <div className='content-wrapper'>
                 <div class="container">
                         <div className='row'>
                     <h1>Rewards</h1>
+                    
+                    <Modal
+                        show={modal}
+                        handleClose={()=>setModal(false)}
+                        >
+                            <div style={{padding:10}}>
+                            <p>Reward a Employee</p>
+                            <div style={{ display:'flex',flexDirection:'row',justifyContent:'space-evenly',alignItems:'center',width:"100%" }}>
+                            <div><Dropdown options={options1} onChange={()=>{}}  label="Select reward" /></div>
+                            <div><Dropdown options={options2} onChange={()=>{}}  label="Select coupoun" /></div>
+                            </div>
+                            <Dropdown options={options} onChange={()=>{}}  label="Select coupoun" isMulti />
+                            </div>
+                            <button style={{marginTop:23,width:"40%",height:40,color:'blue',alignSelf:"center"}} onClick={()=>setModal(true)} >Reward Employees</button>
+                        </Modal>
                           
                             {Cards.map((data, index) => {
                                 return (
@@ -310,9 +380,28 @@ const Dashboard = () => {
                                 )
 
                             })
+                            
+                            
                         }
-                      
+                        <button style={{marginTop:23,width:"40%",height:40,color:'blue',alignSelf:"center"}} onClick={()=>{setModal(true)}}>Give Reward</button>
+
+                        <div style={{ display:'flex',flexDirection:'row',justifyContent:'space-evenly',alignItems:'center',width:"100%" }}>
+                        <h1>Add new Achivers</h1>
+                        <p onClick={()=>{alert('Loaded Previos')}} style={{color:'blue', cursor:'pointer' ,fontSize:20,textDecorationLine:'underline'}}>View Previous Achivers</p>
                         </div>
+                        
+                        <div style={{ display:'flex',flexDirection:'row',justifyContent:'space-evenly',alignItems:'center',width:"100%" }}>
+                            <div><Dropdown options={acheiverOptions} onChange={()=>{}}  label="Select an acheiver" /></div>
+                            <div><Dropdown options={options} onChange={()=>{}}  label="Select employee" /></div>
+                            </div>
+                            <textarea type="textarea" 
+                                name="textValue"
+                                onChange={()=>{}}
+                                />
+                            <button style={{marginTop:23,width:"40%",height:40,color:'blue',alignSelf:"center"}}  onClick={()=>{alert('Achiver Added')}} >Save Chnages</button>
+
+                            </div>
+                        
                 </div>
                 
                   
