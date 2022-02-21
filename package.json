@@ -1,11 +1,21 @@
 {
-  "name": "electron-react-app",
+  "name": "bnb-remotely",
   "version": "0.1.0",
   "private": true,
   "description": "none",
   "author": "invincix",
   "build": {
-    "appId": "com.bnb.remotely"
+    "appId": "com.bnb.remotely",
+    "productName":"BnB-Remotely",
+    "target":"NSIS",
+    "directory":{
+      "output":"build"
+    },
+    "nsis":{
+      "allowToChangeInstallationDirectory":true,
+      "oneClick":false
+
+    }
   },
   "main": "public/electron.js",
   "homepage": "./",
@@ -65,6 +75,7 @@
     "electron-build": "electron-builder",
     "release": "yarn react-build && electron-builder --publish=always",
     "build": "yarn react-build && yarn electron-build",
+    "dist":"electron-builder",
     "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
@@ -91,4 +102,5 @@
     "electron-is-dev": "^2.0.0",
     "wait-on": "^6.0.1"
   }
+  
 }
