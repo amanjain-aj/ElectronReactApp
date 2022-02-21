@@ -5,6 +5,7 @@ import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import { DashboardCard,  Dropdown,  ProcessbarTd } from '../../components';
 import 'rsuite/dist/rsuite.min.css';
 import Modal from "../Modal/Modal"
+import Button from "../../components/common/Button";
 import Chip from '@mui/material/Chip';
 import Shape from '../../assets/images/shape.svg';
 import Avatar from '@mui/material/Avatar';
@@ -353,21 +354,31 @@ const Dashboard = () => {
             <div className='content-wrapper'>
                 <div class="container">
                         <div className='row'>
-                    <h1>Rewards</h1>
+                    <h1 style={{fontSize: "25px"}}>Rewards</h1>
                     
                     <Modal
                         show={modal}
                         handleClose={()=>setModal(false)}
                         >
-                            <div style={{padding:10}}>
-                            <p>Reward a Employee</p>
-                            <div style={{ display:'flex',flexDirection:'row',justifyContent:'space-evenly',alignItems:'center',width:"100%" }}>
-                            <div><Dropdown options={options1} onChange={()=>{}}  label="Select reward" /></div>
-                            <div><Dropdown options={options2} onChange={()=>{}}  label="Select coupoun" /></div>
+                            <div style={{ padding: 20 }}>
+                            <h1 style={{fontSize: "20px", textAlign: "left"}}>Reward an Employee</h1>
+                            <div style={{ display:'flex',flexDirection:'row',justifyContent:'space-between',width:"100%",padding: "0" }}>
+                            <div style={{width: "30%"}}><Dropdown options={options1} onChange={()=>{}}  label="Select reward" /></div>
+                            <div style={{width: "30%"}}><Dropdown options={options2} onChange={()=>{}}  label="Select coupoun" /></div>
                             </div>
                             <Dropdown options={options} onChange={()=>{}}  label="Select coupoun" isMulti />
                             </div>
-                            <button style={{marginTop:23,width:"40%",height:40,color:'blue',alignSelf:"center"}} onClick={()=>setModal(true)} >Reward Employees</button>
+                            <div className='text-center'>
+                                <Button
+                                buttonName="Reward Employees"
+                                buttonStyle={{marginTop: "20px",marginBottom: "20px",textAlign:"center"}}
+                                onClick={() => {
+                                    setModal(true)   
+                                }}
+                        />
+                            </div>
+                            
+                          
                         </Modal>
                           
                             {Cards.map((data, index) => {
@@ -381,23 +392,37 @@ const Dashboard = () => {
                             
                             
                         }
-                        <button style={{marginTop:23,width:"40%",height:40,color:'blue',alignSelf:"center"}} onClick={()=>{setModal(true)}}>Give Reward</button>
-
-                        <div style={{ display:'flex',flexDirection:'row',justifyContent:'space-evenly',alignItems:'center',width:"100%" }}>
-                        <h1>Add new Achivers</h1>
+                         <Button
+                             buttonName="Give Reward"
+                             onClick={() => {
+                                 setModal(true)   
+                            }}
+                          
+                        
+                        />
+                       
+                        <div style={{ display:'flex',flexDirection:'row',justifyContent:'space-between',width:"100%" ,marginTop: "20px"}}>
+                        <h1 style={{fontSize: "25px", textAlign: "left"}}>Add New Achivers</h1>
                         <p onClick={()=>{alert('Loaded Previos')}} style={{color:'blue', cursor:'pointer' ,fontSize:20,textDecorationLine:'underline'}}>View Previous Achivers</p>
                         </div>
                         
-                        <div style={{ display:'flex',flexDirection:'row',justifyContent:'space-evenly',alignItems:'center',width:"100%" }}>
-                            <div><Dropdown options={acheiverOptions} onChange={()=>{}}  label="Select an acheiver" /></div>
-                            <div><Dropdown options={options} onChange={()=>{}}  label="Select employee" /></div>
+                        <div style={{ display:'flex',flexDirection:'row',justifyContent:'space-between',width:"100%",padding: "0" }}>
+                            <div style={{width: "30%"}}><Dropdown options={acheiverOptions} onChange={()=>{}}  label="Select an acheiver" /></div>
+                            <div style={{width: "30%"}}><Dropdown options={options} onChange={()=>{}}  label="Select employee" /></div>
                             </div>
                             <textarea type="textarea" 
                                 name="textValue"
                                 onChange={()=>{}}
-                                />
-                            <button style={{marginTop:23,width:"40%",height:40,color:'blue',alignSelf:"center"}}  onClick={()=>{alert('Achiver Added')}} >Save Chnages</button>
-
+                        />
+                               
+                                <Button
+                                    buttonName="Save Changes"
+                                    buttonStyle={{marginTop: "20px"}}
+                                    onClick={() => {
+                                        alert('Achiver Added')  
+                                    }}
+                            />
+                               
                             </div>
                         
                 </div>
