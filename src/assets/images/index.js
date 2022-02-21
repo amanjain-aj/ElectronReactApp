@@ -1,0 +1,11 @@
+export { default as logo } from "./furnishlogo.png";
+export { default as logosm } from "./logo-sm.png";
+export { default as forgot } from "./forgot.svg";
+export { default as pageNotFound } from "./pageNotFound.svg";
+export { default as na } from "./404.svg";
+export { default as logoRect } from "./furnishlogorect.png";
+export { default as login } from "./login.svg";
+export { default as otp } from "./otp.svg";
+export { default as changepassword } from "./changepassword.svg";
+export { default as masterconfiguration } from "./master_configuration.svg";
+export { default as UserPlaceholder } from "./user_placeholder.png";

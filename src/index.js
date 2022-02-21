@@ -1,21 +1,16 @@
 import React from 'react';
-import * as ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import './index.css';
+import ReactDOM from 'react-dom';
+import 'rsuite/dist/rsuite.min.css'
+import './styles/index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from "react-router-dom";
 
-ReactDOM.render(
+// const backup = console.warn;
+// console.warn = function filterWarnings(msg) {
+//   const supressedWarnings = ['React Hook useEffect has missing dependencies'];
+//   if (!supressedWarnings.some(entry => msg.includes(entry))) {
+//     backup.apply(console, arguments);
+//   }
+// };
 
-  <React.StrictMode>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<React.StrictMode> <Router basename={'/electron/'}><App /></Router>  </React.StrictMode>, document.getElementById('root'));

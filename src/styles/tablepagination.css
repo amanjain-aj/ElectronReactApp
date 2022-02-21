@@ -1,0 +1,7 @@
+.MuiToolbar-root p {
+    margin-top: 1rem;
+}
+
+.MuiButtonBase-root{
+    box-shadow: none;
+}

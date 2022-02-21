@@ -1,0 +1,76 @@
+.customcarddiv{
+    background-color: #fff;
+    width:98%;
+    margin-bottom: 1.5em;
+    margin-left: 2%;
+    border-radius: 16px;
+    box-shadow: 0px 0px 0.7px -6px rgba(0, 0, 0, 0),
+    0px 0px 1.7px -6px rgba(0, 0, 0, -0.003),
+    0px 0px 3.3px -6px rgba(0, 0, 0, -0.006),
+    0px 0px 5.8px -6px rgba(0, 0, 0, -0.002),
+    0px 0px 10.9px -6px rgba(0, 0, 0, 0.028),
+    0px 0px 26px -6px rgba(0, 0, 0, 0.11);
+;
+    padding: 1.2em 1.5em;
+    transition: 0.4s all;
+    /* border: solid 1px rgb(255, 255, 255); */
+}
+.customcarddiv:hover{
+  /* background-color: rgba(228, 228, 228, 0.788); */
+  /* border: solid 1px rgb(189, 189, 189); */
+  box-shadow: 0px 0px 0.7px -6px rgba(0, 0, 0, 0),
+  0px 0px 1.7px -6px rgba(0, 0, 0, -0.001),
+  0px 0px 3.3px -6px rgba(0, 0, 0, -0.001),
+  0px 0px 5.8px -6px rgba(0, 0, 0, 0),
+  0px 0px 10.9px -6px rgba(0, 0, 0, 0.005),
+  0px 0px 26px -6px rgba(0, 0, 0, 0.02);
+
+  cursor: pointer;
+}
+
+.cardactive{
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: var(--primary);
+}
+.notactive{
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: yellow;
+}
+
+.cardOngoing{
+   width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: var(--primary); 
+}
+
+.cardCompleted{
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: yellow;
+}
+
+.cardCancelled{
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: red;
+}
+
+.iconSwitch{
+    color: rgb(172, 172, 172);
+    transition: 0.5s all;
+}
+
+.iconSwitch:hover{
+    color: rgb(102, 102, 102);
+}
+
+.hrBg {
+    background-color: rgba(138, 138, 138, 0.527);
+}

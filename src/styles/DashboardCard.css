@@ -1,0 +1,14 @@
+.card.card-tale {
+	border-radius: 12px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	color: #ffffff;
+	border: none;
+	margin-bottom: 20px;
+	min-height: 15vh;
+}
+.card-body {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	padding: 20px;
+}

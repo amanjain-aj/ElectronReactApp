@@ -1,0 +1,1 @@
+export let  localLang = JSON.parse(localStorage.getItem('lang')) ? JSON.parse(localStorage.getItem('lang')) : 'en'

@@ -1,0 +1,70 @@
+.content-wrapper {
+	background: #f5f7ff;
+	padding: 2.375rem 2.375rem;
+	width: 100%;
+}
+
+.card-people {
+	position: relative;
+	padding-top: 20px;
+}
+
+.card-people img {
+	border-radius: 20px;
+	width: 100%;
+}
+
+.grid-margin {
+	margin-bottom: 2.5rem;
+}
+
+.card-people .weather-info {
+	position: absolute;
+	top: 30px;
+	right: 24px;
+}
+
+.card-people .weather-info sup {
+	font-size: 18px;
+}
+
+.card-title {
+	color: #010101;
+	margin-bottom: 1.2rem;
+	text-transform: capitalize;
+	font-size: 1.125rem;
+	font-weight: 600;
+}
+
+.bold {
+	font-weight: 600;
+	font-size: 0.800rem;
+	margin-bottom: .5rem;
+	line-height: 1.3rem;
+}
+
+.thdiv {
+	margin-top: 10px;
+	margin-right: 40px;
+}
+
+.value {
+	font-size: 30px;
+	font-weight: 600;
+	color: #4b49ac !important;
+}
+
+.card {
+	border-radius: 20px;
+	border: none;
+}
+
+.data-icon-card-primary {
+	background-color: #4b49ac;
+	color: #ffffff;
+}
+
+.data-icon-card-primarys {
+	background-color: #7da0fa;
+	color: #ffffff;
+}

@@ -1,0 +1,31 @@
+
+.accordion{
+  margin:0.2rem;
+  
+}
+.accordion-title {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: var(--primary);;
+  color: var(--white);
+}
+
+.accordion-title:hover {
+  background-color: var(--primary-dark);
+}
+
+.accordion-title,
+.accordion-content {
+  padding: 1rem;
+}
+.accordion-item{
+    border: 0 !important;
+}
+.accordion-content {
+  background-color: var(--white);
+  box-sizing: border-box;
+  border-radius: 10px;
+}

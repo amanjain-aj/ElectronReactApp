@@ -1,0 +1,14 @@
+.tablerow{
+
+}
+.tablerow:hover{
+    background-color: #F3EFEE;
+    opacity: 0.9;
+}
+.tabledata{
+overflow: hidden;
+        text-overflow: ellipsis;
+     word-wrap: break-word;
+        max-height: 3.6em;
+  line-height: 1.8em;
+}

@@ -1,0 +1,322 @@
+@font-face {
+  font-family: Work Sans;
+  src: url(../assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: AGBR;
+  src: url(../assets/fonts/ag-book-rounded-bold.ttf);
+}
+
+:root {
+  /* --primary: #4747A1; */
+  --primary: #4747A1;
+  --primary-dark: #302464;
+  --light:#7DA0FA;
+  --black: #000;
+  --white: #fff;
+  --ligtwhite: #ecedf0;
+  --tranparent-black: rgba(0, 0, 0, 0.185);
+  --transparent-primary: #e7ecff66;
+  --textGrey: #888888;
+  --mild-grey: rgba(172, 172, 172, 0.473);
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+* {
+  font-family: Work Sans !important;
+  letter-spacing: 0.07em;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background: var(--transparent-primary) !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  /* font-family:AGBR; */
+  /* letter-spacing: -1px; */
+  /* color: var(--primary); */
+}
+
+a {
+  color: var(--black);
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--light);
+}
+
+.glassMorphic {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 1em;
+  border: 0;
+  box-shadow: 0px 0px 5px var(--tranparent-black);
+}
+
+
+
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .glassMorphic {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.light {
+  color: var(--textGrey) ;
+}
+
+.masterCardContainer {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  border: 0.5px solid #f3f0f0;
+  cursor: pointer;
+  padding: 1em 2em;
+  margin-bottom: 1.5em;
+  height: 75%;
+  border-radius: 10px;
+}
+/* fuck off */
+
+.masterCardContainer:hover {
+  background: var(--primary);
+  /* border: solid .5px #7bd12667; */
+  color: var(--white);
+}
+.masterCardContainer:hover label{
+  color: var(--white) !important;
+}
+
+.masterCardLogo {
+  border-radius: 400px;
+  margin-right: 15px;
+  background-color: var(--primary);
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  color: var(--white);
+  font-size: 1.5em;
+  padding: 8px;
+}
+
+.masterCardLabel {
+  color: var(--primary);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.ReactModal__Content {
+  position: relative !important;
+}
+
+.modalFormContainer {
+  padding: 2em;
+  font-weight: 400;
+  font-style: 18px;
+  word-break: break-word;
+  line-height: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .modalFormContainer {
+    padding: 0.5em;
+    overflow-x: hidden;
+  }
+}
+
+.logincard {
+  display: flex;
+  background: #fff;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.login_image {
+  width: 100%;
+  margin: auto;
+}
+
+.loginareaScreen {
+  width: 100%;
+  background: var(--white);
+  padding: 50px 150px;
+  margin: auto;
+}
+
+.logo-section {
+  width: 100px;
+  text-align: center;
+
+}
+
+.login_form h3 {
+  font-size: 1.7rem;
+
+  font-family: AGBR;
+}
+
+.link__forgotpassword {
+ padding-left: 12px;
+  color: var(--primary);
+}
+
+.cs-text {
+  text-transform: uppercase !important;
+  letter-spacing: 0.5rem;
+  font-size: 2.5em;
+  line-break: loose;
+  line-height: 1.5em;
+}
+
+.login_image img {
+  padding: 5em;
+}
+
+.logo-section img {
+  width: 180%;
+}
+
+
+.float-right {
+  float: right;
+  font-size: 0.7em;
+  margin-bottom: 5px;
+  font-weight: 600;
+  /* margin-right: 1em; */
+}
+
+.clearFix::after {
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+
+.button-group {
+  display: "flex";
+  justify-content: left;
+  width: 235px
+}
+.itemgroupmaindiv{
+  margin: auto;
+}
+
+.custom-select {
+  display: block;
+  width: 100%;
+
+  padding: 5px;
+  border-radius: 12px !important;
+}
+
+.css-yk16xz-control, .css-1pahdxg-control{
+  border-radius: 4px !important;
+}
+
+.css-yk16xz-control{
+  border-radius: 4px !important;
+}
+
+@media only screen and (max-width: 600px ) {
+  .pro-sidebar-layout {
+    height: calc(100vh - 65px) !important;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .loginareaScreen {
+    padding: 0px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .login_form {
+             padding-left: 22px;
+    
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .loginformdiv {
+        
+  }
+}
+.forgotpasswordbuttondiv{
+margin-top: 20px;
+}
+    
+
+@media only screen and (max-width: 600px) {
+  .forgotpasswordbuttondiv {
+  display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+.logo-section  {
+    margin-left: 103px;
+  }
+}
+.white-bg{
+  background-color: #fff;
+}
+
+input::placeholder{
+  color: var(--mild-grey);
+}
