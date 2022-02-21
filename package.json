@@ -2,6 +2,13 @@
   "name": "electron-react-app",
   "version": "0.1.0",
   "private": true,
+  "description": "none",
+  "author": "invincix",
+  "build": {
+    "appId": "com.bnb.remotely"
+  },
+  "main": "public/electron.js",
+  "homepage": "./",
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
@@ -16,6 +23,7 @@
     "axios": "^0.24.0",
     "bootstrap-icons": "^1.7.2",
     "chart.js": "^3.6.2",
+    "cross-env": "^7.0.3",
     "dotenv": "^11.0.0",
     "faker": "^5.5.3",
     "lodash": "^4.17.21",
@@ -48,10 +56,16 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "release": "yarn react-build && electron-builder --publish=always",
+    "build": "yarn react-build && yarn electron-build",
+    "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": [
@@ -70,5 +84,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "electron": "^17.0.1",
+    "electron-is-dev": "^2.0.0",
+    "wait-on": "^6.0.1"
   }
 }

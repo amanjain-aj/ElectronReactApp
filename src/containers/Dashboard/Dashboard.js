@@ -399,7 +399,7 @@ const Dashboard = () => {
                                           <Button
                                             buttonName="Send Congratulations"
                                             onClick={() => {
-                                               
+                                               alert('congratulation sent!')
                                             }}
                                             buttonStyle={{ backgroundColor: "transparent", border: "1px solid #000", width: "100%" }}
                                             textStyle={{color: "#000"}}
