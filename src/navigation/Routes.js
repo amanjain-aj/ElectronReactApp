@@ -12,6 +12,9 @@ export default function Routes(props) {
       <Route exact path="/">
         <Dashboard />
       </Route>
+       <Route exact path="/dashboard">
+        <Dashboard />
+      </Route>
       <Route exact path="/rewards" ><Rewards /></Route>
     </Switch>
   );

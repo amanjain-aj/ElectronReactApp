@@ -8,6 +8,15 @@ import Chip from '@mui/material/Chip';
 import Shape from '../../assets/images/shape.svg';
 import Avatar from '@mui/material/Avatar';
 import NotificationCard from '../../components/common/NotificationCard';
+import Button from "../../components/common/Button";
+import Amazon from '../../assets/images/amazon.png';
+import BookMyShow from '../../assets/images/bookmyshow.webp';
+import Uber from "../../assets/images/uber.jpg";
+import Paytm from "../../assets/images/paytm.png";
+import Zomato from "../../assets/images/zomato.png";
+import { BiCopy } from 'react-icons/bi'; 
+import { FaStar } from 'react-icons/fa'; 
+import { GiPartyPopper } from 'react-icons/gi';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -136,36 +145,72 @@ const Dashboard = () => {
 
     const Cards = [{
         key: 1,
-        cardtitle: 'Today’s Bookings',
-        count: 4006,
-        percentage: '10.00%',
-        days: 30,
-        color: '#7DA0FA',
+        cardTitle: 'Amazon Gift Card worth Rs.2000',
+        cardImage: Amazon,
+        cardSubCaption: 'Use the code given below to redeem:',
+        cardFooter: 'Expiry Date: 24th August 2021',
+        link: 'https://www.giftcards.com/'
     },
     {
         key: 2,
-        cardtitle: 'Today’s Bookings',
-        count: 4006,
-        percentage: '10.00%',
-        days: 30,
-        color: '#4747A1',
+        cardTitle: 'BookMyShow Gift Card worth Rs.2000',
+        cardImage: BookMyShow,
+         cardSubCaption: 'Use the code given below to redeem:',
+        cardFooter: 'Expiry Date: 24th August 2021',
+        link: 'https://www.giftcards.com/'
     },
     {
         key: 3,
-        cardtitle: 'Today’s Bookings',
-        count: 4006,
-        percentage: '10.00%',
-        days: 30,
-        color: '#F3797E',
+        cardTitle: 'Uber Gift Card worth Rs.2000',
+        cardImage: Uber,
+         cardSubCaption: 'Use the code given below to redeem:',
+        cardFooter: 'Expiry Date: 24th August 2021',
+        link: 'https://www.giftcards.com/'
     },
     {
         key: 4,
-        cardtitle: 'Today’s Bookings',
-        count: 4006,
-        percentage: '10.00%',
-        days: 30,
-        color: '#7DA0FA',
+        cardTitle: 'Zomato',
+        cardImage: Zomato,
+         cardSubCaption: 'Use the code given below to redeem',
+        cardFooter: 'Expiry Date: 24th August 2021',
+        link: 'https://www.giftcards.com/'
+        },
+     {
+        key: 5,
+        cardTitle: 'Paytm',
+         cardImage: Paytm,
+         cardSubCaption: 'Use the code given below to redeem:',
+         cardFooter: 'Expiry Date: 24th August 2021',
+         link: 'https://www.giftcards.com/'
     },
+    ]
+
+    const Achievers = [{
+        key: 1,
+        cardTitle: 'Best Employee of the Year',
+        cardImage: Uber,
+        cardSubCaption: 'Paresh Sahoo',
+        cardFooter: 'Mobility',
+        color: '#ffc107'
+       
+    },
+    {
+        key: 2,
+        cardTitle: 'All-Rounder of the Year',
+        cardImage: Uber,
+         cardSubCaption: 'Aditya Jena',
+        cardFooter: 'Mobility Lead',
+        color: '#575757'
+    },
+    {
+        key: 3,
+        cardTitle: 'Best Personality of the Year',
+        cardImage: Uber,
+        cardSubCaption: 'Venkat',
+        cardFooter: 'Mobility',
+        color: '#945b00'
+    },
+    
     ]
 
     const ProcessData = [{
@@ -254,7 +299,7 @@ const Dashboard = () => {
     ]
 
     const dateToFormat = new Date();
-
+   
     //Translation-varible
     const welcomeMessage = strings["Dashboard.welcomeMessage"],
         welcomeMessageInfo = strings["Dashboard.welcomeMessageInfo"],
@@ -297,21 +342,80 @@ const Dashboard = () => {
 
     return (
         <>
-            <div className='content-wrapper'>
-                <div className='row'>
-                   
+             <div className='content-wrapper'>
+                <div className="container">
+                        <div className='row'>
+                    <h1 style={{fontSize: "25px"}}>Your Rewards</h1>
+                        {Cards.map((data, index) => {
+                            return (
+                                <div className="col-md-4">
+                                    <div className="reward-card">
+                                        <div className="align-items-center card-body d-flex">
+                                            <div style={{ width: "50px", height: '50px', objectFit: 'cover' }}>
+                                                <img src={data.cardImage} style={{ width: '100%', height: '100%' }} />
+                                            </div>
+                                            <p style={{ fontSize: '1rem', lineHeight: '1.3rem', color: "#000", marginLeft: "15px", textAlign: 'left' }}>{data.cardTitle}</p>
+                                        </div>
+                                        <div className='reward-body' style={{ padding: "20px",color: "#000"}}>
+                                            <p>{data.cardSubCaption}</p>
+                                            <div style={{display: 'flex',flexDirection: 'row',justifyContent: 'space-between', marginTop: "10px"}}>
+                                                <p style={{fontWeight: 'bold'}}>{data.link}</p><BiCopy style={{marginTop: '5px'}}/>
+                                            </div>
+                                        </div>
+                                        <div className="reward-footer" style={{ padding: "20px",color: "#ff1604"}}>
+                                            <p>{data.cardFooter}</p>
+                                        </div>  
+                                    </div>
+                                </div>
+
+                            )
+                        })    
+                    }
+                            
+                        
+                    </div>
+                    <div className='row'>
+                        <h1 style={{ fontSize: "25px" }}>Achievers of the Year</h1>
+                        {
+                            Achievers.map((data, index) => {
+                                return (
+                                     <div className="col-md-4">
+                            <div className='achiever-card'>
+                                <div className='achiever-top'>
+                                                <h1 style={{ fontSize: "18px" }}>{data.cardTitle }</h1>
+                                    <FaStar size={20} color={data.color}/>
+                                </div>
+                                <div className='achiever-body'>
+                                    <div className="align-items-center card-body d-flex">
+                                            <div style={{ width: "50px", height: '50px', objectFit: 'cover' }}>
+                                                <img src={data.cardImage} style={{ width: '100%', height: '100%' }} />
+                                        </div>
+                                        <div>
+                                                        <p style={{ fontSize: '1rem', lineHeight: '1.3rem', color: "#000", marginLeft: "15px", textAlign: 'left' }}>{data.cardSubCaption}</p>
+                                                        <p style={{ fontSize: '1rem', lineHeight: '1.3rem', color: "#000", marginLeft: "15px", textAlign: 'left' }}>{ data.cardFooter}</p>
+                                            </div>
+                                    </div>
+                                    <div className='achiever-footer'>
+                                          <Button
+                                            buttonName="Send Congratulations"
+                                            onClick={() => {
+                                               
+                                            }}
+                                            buttonStyle={{ backgroundColor: "transparent", border: "1px solid #000", width: "100%" }}
+                                            textStyle={{color: "#000"}}
+                                            icon={<GiPartyPopper color={"#ffc107"} style={{marginRight: "5px"}}/>}
+                                            />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                )
+                                   
+                            })
+                        }
+                    
+                    </div>
                 </div>
-                <div className='row'>
-                  
-
-                  
-
-                </div>
-               
-              
-            
-               
-
             </div>
 
         </>

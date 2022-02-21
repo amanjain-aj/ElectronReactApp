@@ -10,7 +10,7 @@ import Avatar from '@mui/material/Avatar';
 import Amazon from '../../assets/images/amazon.png';
 import BookMyShow from '../../assets/images/bookmyshow.webp';
 import Uber from "../../assets/images/uber.jpg";
-import Paytm from "../../assets/images/paytm.jpg";
+import Paytm from "../../assets/images/paytm.png";
 import Zomato from "../../assets/images/zomato.png";
 import NotificationCard from '../../components/common/NotificationCard';
 import {
@@ -302,13 +302,11 @@ const Dashboard = () => {
                           
                             {Cards.map((data, index) => {
                                 return (
-                            
                                     <DashboardCard
                                         cardtitle={data.cardTitle}
                                         cardImage={data.cardImage}
                                     />
                                 )
-
                             })
                         }
                       
