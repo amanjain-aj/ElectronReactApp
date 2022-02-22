@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import 'rsuite/dist/rsuite.min.css'
 import './styles/index.css';
 import App from './App';
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 
 // const backup = console.warn;
 // console.warn = function filterWarnings(msg) {
